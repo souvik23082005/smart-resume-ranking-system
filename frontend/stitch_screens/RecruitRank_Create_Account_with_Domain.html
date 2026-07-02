@@ -1,0 +1,480 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>RecruitRank - Create Account</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#c6c6cb",
+                      "on-error": "#690005",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "on-secondary": "#3f008e",
+                      "surface-tint": "#c4c6cf",
+                      "on-tertiary-fixed": "#001f26",
+                      "surface": "#131313",
+                      "on-secondary-fixed": "#25005a",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "surface-container-low": "#1c1b1b",
+                      "outline-variant": "#45474b",
+                      "on-secondary-container": "#c9aeff",
+                      "on-primary": "#2e3037",
+                      "on-background": "#e5e2e1",
+                      "primary-fixed-dim": "#c4c6cf",
+                      "on-primary-container": "#797b83",
+                      "inverse-on-surface": "#313030",
+                      "surface-container-highest": "#353534",
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#5c5e66",
+                      "on-primary-fixed": "#191c22",
+                      "on-tertiary": "#003640",
+                      "surface-dim": "#131313",
+                      "surface-container": "#201f1f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "primary-container": "#0b0e14",
+                      "primary-fixed": "#e1e2eb",
+                      "background": "#131313",
+                      "secondary-fixed": "#eaddff",
+                      "surface-container-high": "#2a2a2a",
+                      "tertiary": "#4cd7f6",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "secondary": "#d2bbff",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed-variant": "#44474e",
+                      "surface-variant": "#353534",
+                      "error": "#ffb4ab",
+                      "surface-bright": "#3a3939",
+                      "primary": "#c4c6cf",
+                      "on-tertiary-container": "#00879e",
+                      "tertiary-container": "#001015",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "tertiary-fixed": "#acedff",
+                      "outline": "#909095",
+                      "secondary-container": "#6001d1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "base": "4px",
+                      "margin-desktop": "40px",
+                      "container-max": "1440px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "mono-data": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ]
+              },
+              "fontSize": {
+                      "mono-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .glass-card {
+            background: linear-gradient(180deg, rgba(11, 14, 20, 0.9) 0%, rgba(11, 14, 20, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0) 100%);
+            z-index: 1;
+        }
+        
+        .role-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .role-card:hover {
+            border-color: rgba(76, 215, 246, 0.5); /* tertiary */
+            box-shadow: 0 0 20px rgba(76, 215, 246, 0.1);
+        }
+        
+        .role-card.selected {
+            border-color: #4cd7f6; /* tertiary */
+            background: rgba(76, 215, 246, 0.05);
+            box-shadow: 0 0 30px rgba(76, 215, 246, 0.15);
+        }
+
+        .role-card.selected .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e5e2e1;
+            transition: all 0.2s ease;
+        }
+
+        .form-input:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #4cd7f6; /* tertiary */
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76, 215, 246, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #6001d1; /* secondary-container */
+            color: #c9aeff; /* on-secondary-container */
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #3f008e; /* on-secondary */
+            box-shadow: 0 0 20px rgba(96, 1, 209, 0.4);
+        }
+        
+        /* Animated Background Gradients */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: #050505;
+            overflow: hidden;
+        }
+
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(96, 1, 209, 0.4) 0%, rgba(0,0,0,0) 70%); /* secondary-container */
+            top: -200px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(76, 215, 246, 0.3) 0%, rgba(0,0,0,0) 70%); /* tertiary */
+            bottom: -150px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+        
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(210, 187, 255, 0.2) 0%, rgba(0,0,0,0) 70%); /* secondary */
+            top: 40%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 30px) scale(1.05); }
+            100% { transform: translate(-30px, 50px) scale(0.95); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center font-body-md relative antialiased selection:bg-tertiary/30 selection:text-white">
+<!-- Background Animation -->
+<div class="bg-mesh">
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+</div>
+<!-- Main Container -->
+<main class="w-full max-w-[1000px] mx-auto px-margin-mobile md:px-margin-desktop py-12 relative z-10 flex flex-col md:flex-row gap-8 items-stretch">
+<!-- Left Side: Branding & Info -->
+<div class="flex-1 flex flex-col justify-center py-8">
+<div class="mb-12">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 flex items-center justify-center border border-secondary-container/50">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">
+                            group_work
+                        </span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">RecruitRank</h1>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Elevate your hiring pipeline.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">Join the ecosystem where kinetic precision meets enterprise talent management. Select your role to optimize your workflow.</p>
+</div>
+<div class="hidden md:flex flex-col gap-6">
+<!-- Decorative abstract element -->
+<div class="w-full max-w-sm h-32 glass-panel rounded-xl flex items-end p-4 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary-container/10 to-transparent z-0"></div>
+<div class="w-full flex items-end justify-between gap-2 z-10">
+<div class="w-1/6 bg-secondary/20 h-1/3 rounded-t-sm group-hover:h-2/3 transition-all duration-500 delay-75"></div>
+<div class="w-1/6 bg-secondary/40 h-1/2 rounded-t-sm group-hover:h-4/5 transition-all duration-500 delay-100"></div>
+<div class="w-1/6 bg-tertiary/40 h-2/3 rounded-t-sm group-hover:h-full transition-all duration-500 delay-150"></div>
+<div class="w-1/6 bg-tertiary/60 h-4/5 rounded-t-sm group-hover:h-2/3 transition-all duration-500 delay-200"></div>
+<div class="w-1/6 bg-tertiary/80 h-full rounded-t-sm group-hover:h-3/4 transition-all duration-500 delay-300 shadow-[0_0_15px_rgba(76,215,246,0.3)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Sign Up Form Card -->
+<div class="flex-[1.2] w-full max-w-md mx-auto">
+<div class="glass-card rounded-2xl p-6 md:p-8 shadow-2xl relative">
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Create Account</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure your workspace identity.</p>
+</div>
+<form class="flex flex-col gap-6" id="signup-form">
+<!-- Role Selection -->
+<div class="space-y-3">
+<label class="font-label-sm text-label-sm text-on-surface-variant block uppercase tracking-wider">Select Role</label>
+<div class="grid grid-cols-1 gap-3">
+<!-- Admin Role Card -->
+<label class="role-card glass-panel rounded-xl p-4 flex gap-4 items-start relative cursor-pointer" onclick="selectRole(this)">
+<input class="sr-only" name="role" required="" type="radio" value="admin">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center shrink-0 border border-outline/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">
+                                        admin_panel_settings
+                                    </span>
+</div>
+<div class="flex-1">
+<div class="font-body-md text-body-md font-semibold text-on-surface mb-1 flex justify-between items-center">
+                                        Admin
+                                        <span class="material-symbols-outlined check-icon text-tertiary opacity-0 scale-50 transition-all duration-300" style="font-variation-settings: 'FILL' 1;">
+                                            check_circle
+                                        </span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-relaxed">
+                                        Manage users, view all assessments, and oversee ranking history.
+                                    </div>
+</div>
+</label>
+<!-- Recruiter Role Card -->
+<label class="role-card glass-panel rounded-xl p-4 flex gap-4 items-start relative cursor-pointer" onclick="selectRole(this)">
+<input class="sr-only" name="role" type="radio" value="recruiter">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center shrink-0 border border-outline/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">
+                                        person_search
+                                    </span>
+</div>
+<div class="flex-1">
+<div class="font-body-md text-body-md font-semibold text-on-surface mb-1 flex justify-between items-center">
+                                        Recruiter
+                                        <span class="material-symbols-outlined check-icon text-tertiary opacity-0 scale-50 transition-all duration-300" style="font-variation-settings: 'FILL' 1;">
+                                            check_circle
+                                        </span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-relaxed">
+                                        Upload JDs, manage resumes, and run candidate comparisons.
+                                    </div>
+</div>
+</label>
+</div>
+</div>
+<!-- Input Fields -->
+<div class="space-y-4">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1.5 ml-1" for="fullName">Full Name</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50 text-lg">
+                                    person
+                                </span>
+<input class="form-input w-full rounded-lg py-2.5 pl-10 pr-4 font-body-md text-body-md placeholder:text-on-surface-variant/40" id="fullName" name="fullName" placeholder="Jane Doe" required="" type="text">
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1.5 ml-1" for="email">Work Email</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50 text-lg">
+                                    mail
+                                </span>
+<input class="form-input w-full rounded-lg py-2.5 pl-10 pr-4 font-body-md text-body-md placeholder:text-on-surface-variant/40" id="email" name="email" placeholder="jane@company.com" required="" type="email">
+</div>
+</div><div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1.5 ml-1" for="recruiterDomain">Recruiter Domain</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50 text-lg">
+                                    domain
+                                </span>
+<input class="form-input w-full rounded-lg py-2.5 pl-10 pr-4 font-body-md text-body-md placeholder:text-on-surface-variant/40" id="recruiterDomain" name="recruiterDomain" placeholder="e.g. Technology" type="text">
+</div>
+<p class="font-label-sm text-[10px] text-tertiary/60 mt-1 ml-1">* Required for Recruiter role</p>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1.5 ml-1" for="password">Password</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50 text-lg">
+                                    lock
+                                </span>
+<input class="form-input w-full rounded-lg py-2.5 pl-10 pr-10 font-body-md text-body-md placeholder:text-on-surface-variant/40" id="password" name="password" placeholder="••••••••" required="" type="password">
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility_off</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Submit -->
+<div class="pt-2">
+<button class="btn-primary w-full rounded-lg py-3 px-4 font-label-sm text-label-sm uppercase tracking-widest flex items-center justify-center gap-2 group" type="submit">
+                            Initialize Workspace
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                                arrow_forward
+                            </span>
+</button>
+</div>
+<div class="text-center mt-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant font-normal">
+                             Already have an account? <a class="text-tertiary hover:text-tertiary-fixed underline decoration-tertiary/30 underline-offset-4 transition-colors" href="#">Sign In</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+</main>
+<script>
+        // Simple logic to handle role selection styling
+        function selectRole(selectedElement) {
+            // Remove 'selected' class from all role cards
+            document.querySelectorAll('.role-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            // Add 'selected' class to the clicked one
+            selectedElement.classList.add('selected');
+            
+            // Ensure the radio input is checked (mostly handled by label wrapping, but good measure)
+            const radio = selectedElement.querySelector('input[type="radio"]');
+            if(radio) radio.checked = true;
+        }
+
+        // Initialize form interactions
+        document.getElementById('signup-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            // Loading state
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> Processing`;
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined text-sm">check</span> Workspace Created`;
+                btn.classList.replace('btn-primary', 'bg-tertiary');
+                btn.classList.replace('text-c9aeff', 'text-on-tertiary');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('opacity-80', 'cursor-not-allowed', 'bg-tertiary', 'text-on-tertiary');
+                    btn.classList.add('btn-primary', 'text-c9aeff');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>

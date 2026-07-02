@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RecruitRank - Kinetic Precision in Talent Acquisition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Geist:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-error": "#690005",
+                        "secondary": "#d2bbff",
+                        "primary": "#c4c6cf",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "tertiary": "#4cd7f6",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "on-primary-fixed": "#191c22",
+                        "surface-variant": "#353534",
+                        "on-secondary-container": "#c9aeff",
+                        "on-secondary-fixed": "#25005a",
+                        "tertiary-fixed": "#acedff",
+                        "outline-variant": "#45474b",
+                        "primary-container": "#0b0e14",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-background": "#e5e2e1",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#001f26",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#c4c6cf",
+                        "primary-fixed": "#e1e2eb",
+                        "on-secondary": "#3f008e",
+                        "surface-tint": "#c4c6cf",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#797b83",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#001015",
+                        "on-tertiary": "#003640",
+                        "on-primary-fixed-variant": "#44474e",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#eaddff",
+                        "inverse-primary": "#5c5e66",
+                        "outline": "#909095",
+                        "secondary-container": "#6001d1",
+                        "background": "#131313",
+                        "on-tertiary-container": "#00879e",
+                        "on-primary": "#2e3037",
+                        "inverse-surface": "#e5e2e1",
+                        "on-surface-variant": "#c6c6cb",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "headline-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["15px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #7C3AED;
+            border-top: 1px solid #3B82F6;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #e5e2e1;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-secondary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-none">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">RecruitRank</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Platform</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-white/10 transition-all duration-300 px-2 py-1 rounded" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-white/10 transition-all duration-300 px-2 py-1 rounded" href="#">Enterprise</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md hover:bg-white/10 transition-all duration-300 px-2 py-1 rounded" href="#">Pricing</a>
+</div>
+<div class="flex gap-4">
+<button class="btn-secondary px-4 py-2 rounded font-label-sm text-label-sm">Sign In</button>
+<button class="btn-primary px-4 py-2 rounded font-label-sm text-label-sm">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+<!-- 3D Animation Background -->
+<div class="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-80">
+<!-- STITCH_THREEJS_START:ANIMATION_19 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_19" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_19');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const container = document.getElementById('threejs-container') || document.body;
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Resume Geometry (A4 Paper Aspect Ratio)
+const geometry = new THREE.PlaneGeometry(3.5, 5);
+const material = new THREE.MeshPhongMaterial({ 
+    color: 0xffffff, 
+    side: THREE.DoubleSide,
+    shininess: 100
+});
+
+const resume = new THREE.Mesh(geometry, material);
+scene.add(resume);
+
+// Simple Lights
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0x00D1FF, 1, 10);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+camera.position.z = 7;
+
+// Mouse Tracking
+let mouseX = 0;
+let mouseY = 0;
+window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+});
+
+// Scroll Tracking
+let scrollY = 0;
+window.addEventListener('scroll', () => {
+    scrollY = window.scrollY;
+});
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Floating motion
+    const time = Date.now() * 0.001;
+    resume.position.y = Math.sin(time) * 0.2;
+    resume.rotation.y = Math.sin(time * 0.5) * 0.1 + (mouseX * 0.2);
+    resume.rotation.x = Math.cos(time * 0.5) * 0.05 + (mouseY * 0.2);
+
+    // Scroll effects: Move back and fade out
+    const scrollFactor = Math.min(scrollY / 500, 1);
+    resume.position.z = -scrollFactor * 10;
+    resume.material.opacity = 1 - scrollFactor;
+    resume.material.transparent = true;
+
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_19 -->
+</div>
+<div class="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl mx-auto fade-in-up">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6 drop-shadow-lg">
+                Elevate Your Hiring Pipeline with <span class="text-tertiary">Kinetic Precision</span>.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl drop-shadow-md">
+                Experience the future of recruitment where AI-driven rankings meet immersive data visualization.
+            </p>
+<button class="btn-primary px-8 py-4 rounded-lg font-body-md text-body-md shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-105 transition-transform duration-300">
+                Start Your Free Trial
+            </button>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce opacity-60">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-2 tracking-widest uppercase">Scroll to Explore</span>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest relative z-10">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-24 fade-in-up">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Intelligent Processing Workflow</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Streamline your talent acquisition with military-grade precision and data density.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="glass-panel p-8 rounded-xl fade-in-up hover:border-tertiary/50 transition-colors duration-500 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tertiary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-6 border border-white/10 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sort</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-3 font-semibold">Automated Ranking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Algorithmic sorting assigns precise kinetic scores to candidates based on raw potential and historical performance data.</p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-panel p-8 rounded-xl fade-in-up hover:border-secondary-container/50 transition-colors duration-500 relative overflow-hidden group" style="transition-delay: 100ms;">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#7C3AED] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-6 border border-white/10 text-[#7C3AED]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-3 font-semibold">Multi-Resume Processing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Simultaneously parse thousands of unstructured documents into structured, queryable data nodes instantly.</p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-panel p-8 rounded-xl fade-in-up hover:border-tertiary-fixed-dim/50 transition-colors duration-500 relative overflow-hidden group" style="transition-delay: 200ms;">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-tertiary-fixed-dim to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-surface flex items-center justify-center mb-6 border border-white/10 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">join_inner</span>
+</div>
+<h3 class="font-body-lg text-body-lg text-on-surface mb-3 font-semibold">Job Description Alignment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Neural matching validates candidate skills against exact technical requirements, filtering out noise with high confidence.</p>
+</div>
+</div>
+<!-- Dashboard Preview / Bento Style -->
+<div class="mt-32 glass-panel rounded-xl overflow-hidden border border-white/10 fade-in-up p-8">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Command Center</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Real-time candidate telemetry. Monitor pipeline health and scoring distributions at a glance.</p>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-white/5">
+<span class="font-body-md text-body-md text-on-surface">Top Candidates</span>
+<span class="font-mono-data text-mono-data text-tertiary bg-tertiary-container px-2 py-1 rounded">142</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low border border-white/5">
+<span class="font-body-md text-body-md text-on-surface">Processing Queue</span>
+<span class="font-mono-data text-mono-data text-on-surface-variant bg-surface-container px-2 py-1 rounded">0</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-2/3 h-64 rounded-lg bg-surface-container border border-white/5 relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at center, rgba(124,58,237,0.1) 0%, transparent 70%);"></div>
+<div class="font-mono-data text-mono-data text-on-surface-variant opacity-50 flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-4xl">analytics</span>
+<span>Data Visualization Module Ready</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 border-t border-outline-variant no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto gap-gutter">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">RecruitRank</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Security</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Status</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                © 2024 RecruitRank. Kinetic Precision in Talent Acquisition.
+            </div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

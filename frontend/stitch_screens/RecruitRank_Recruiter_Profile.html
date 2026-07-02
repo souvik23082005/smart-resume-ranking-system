@@ -1,0 +1,434 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>RecruitRank - Recruiter Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1b",
+                      "outline-variant": "#45474b",
+                      "on-secondary-fixed-variant": "#5a00c6",
+                      "secondary-fixed": "#eaddff",
+                      "surface-container": "#201f1f",
+                      "secondary-fixed-dim": "#d2bbff",
+                      "on-tertiary-container": "#00879e",
+                      "surface-dim": "#131313",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed-variant": "#44474e",
+                      "secondary": "#d2bbff",
+                      "on-surface": "#e5e2e1",
+                      "on-primary": "#2e3037",
+                      "on-secondary-container": "#c9aeff",
+                      "on-error-container": "#ffdad6",
+                      "primary-container": "#0b0e14",
+                      "secondary-container": "#6001d1",
+                      "on-tertiary-fixed-variant": "#004e5c",
+                      "on-tertiary-fixed": "#001f26",
+                      "on-secondary-fixed": "#25005a",
+                      "error-container": "#93000a",
+                      "tertiary": "#4cd7f6",
+                      "inverse-on-surface": "#313030",
+                      "error": "#ffb4ab",
+                      "surface-container-high": "#2a2a2a",
+                      "surface": "#131313",
+                      "on-secondary": "#3f008e",
+                      "surface-container-highest": "#353534",
+                      "surface-bright": "#3a3939",
+                      "on-tertiary": "#003640",
+                      "on-primary-fixed": "#191c22",
+                      "primary": "#c4c6cf",
+                      "primary-fixed-dim": "#c4c6cf",
+                      "background": "#131313",
+                      "tertiary-container": "#001015",
+                      "on-surface-variant": "#c6c6cb",
+                      "surface-variant": "#353534",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-container": "#797b83",
+                      "tertiary-fixed": "#acedff",
+                      "on-error": "#690005",
+                      "primary-fixed": "#e1e2eb",
+                      "surface-tint": "#c4c6cf",
+                      "inverse-primary": "#5c5e66",
+                      "on-background": "#e5e2e1",
+                      "tertiary-fixed-dim": "#4cd7f6",
+                      "outline": "#909095"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Geist"
+                      ],
+                      "headline-lg-mobile": [
+                              "Geist"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Geist"
+                      ],
+                      "mono-data": [
+                              "JetBrains Mono"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "15px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "mono-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(11, 14, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e5e2e1;
+            transition: all 0.2s ease;
+        }
+        
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #7C3AED;
+            box-shadow: 0 0 0 1px #7C3AED;
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: #7C3AED;
+            color: white;
+            border-top: 1px solid #3B82F6;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #6D28D9;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: #e5e2e1;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .accent-gradient-text {
+            background: linear-gradient(to right, #06B6D4, #7C3AED);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Decorative Background Glows -->
+<div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] bg-secondary-container rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+<div class="fixed bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-tertiary-container rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+<!-- SideNavBar from JSON -->
+<nav class="docked h-screen left-0 w-64 border-r border-white/10 shadow-2xl bg-surface-container/60 backdrop-blur-2xl flex flex-col py-6 hidden md:flex shrink-0 z-10 transition-all duration-300 ease-in-out">
+<!-- Brand / Header -->
+<div class="px-6 mb-10 flex flex-col gap-2">
+<h1 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">RecruitRank</h1>
+<div class="flex items-center gap-3 mt-4">
+<img alt="RecruitRank Logo" class="w-10 h-10 rounded-lg object-cover border border-white/10" data-alt="A small, stylized neon geometric logo representing a sophisticated recruitment platform, glowing against a dark background, minimal and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgye4lMKWhOIkglt8mdB9yX6rcS6lUvJu86l5sRXICV3YMW9yfzUVYCSKa-x4jZQIC2dfFlijBbJhSXZEFtUGvmXKGzLPT3cy17PvCUnEbPPVvwGpSEvAkUWh02wjBmguXoUBz4DcQvUlH7iTdfkXauijWmEqdCnLOfMteoNO3nifUmkyQz3I1QYvtBsPZ8wVGv9H1wZ1_k2kUoTUupgXoLT40OsjLYixbkPT2tWK0CHkUs08Ux5GiWGVt28ni15-NJe6RJtME-I">
+<div>
+<h2 class="font-label-sm text-label-sm text-on-surface">Admin Panel</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-normal">Recruitment Lead</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-2">
+<!-- Inactive -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface mx-2 rounded-r-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-label-sm text-label-sm">User Management</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface mx-2 rounded-r-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-sm text-label-sm">All Assessments</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface mx-2 rounded-r-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">add_box</span>
+<span class="font-label-sm text-label-sm">New Assessment</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface mx-2 rounded-r-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span class="font-label-sm text-label-sm">My Uploads</span>
+</a>
+</div>
+<!-- Footer / Bottom Links -->
+<div class="mt-auto flex flex-col gap-2 pt-6 border-t border-white/5 px-2">
+<!-- CTA -->
+<div class="px-2 mb-4">
+<button class="w-full btn-secondary font-label-sm text-label-sm py-2 rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+                    Upgrade Plan
+                </button>
+</div>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface rounded-r-xl transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-sm text-label-sm">Help</span>
+</a>
+<!-- Active State - Settings/Profile -->
+<a class="flex items-center gap-3 bg-secondary-container/30 text-on-secondary-container border-l-4 border-secondary px-4 py-3 rounded-r-xl" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-sm text-label-sm">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto relative z-0">
+<!-- Mobile Header Spacer -->
+<div class="md:hidden h-16 border-b border-white/10 flex items-center px-4 bg-surface-container/80 backdrop-blur-md sticky top-0 z-20">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">RecruitRank</h1>
+<button class="ml-auto text-on-surface-variant"><span class="material-symbols-outlined">menu</span></button>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<!-- Page Header -->
+<div class="mb-8 md:mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Recruiter <span class="accent-gradient-text">Profile</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Manage your personal details, platform preferences, and account security.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Identity & Status -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Profile Identity Card -->
+<div class="glass-panel rounded-xl p-8 flex flex-col items-center text-center relative overflow-hidden group">
+<!-- Glow effect -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none"></div>
+<div class="relative mb-6">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-white/10 ring-4 ring-black/20">
+<img alt="Sarah Jenkins Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a modern corporate recruiter in a dimly lit, high-end office setting, cool blue and purple lighting accents, cinematic quality, looking confident and approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuTf1oOwuBWwZwFfk68oV64SO_ueAK_idNSdGdWMsVZRPFWyq_Aw-SDLRF49J1F-rXU8HOIDfh6Q_5ojbaVVOQ-TQOf1A2Cx4ZFn4jaJhc_UxL2f5ZhLHVvSenUtd14sr1xWpKv9yMm54oo6aDq0C-HtPjnpOukGDNkZ-61q376V2oneSV_eoXFTs9dZpDfXlUsSgua3GLUGlnr-4mCzZjYSFpRuUB7OyxPCOVe3grSCjUmr6iI4n1UCKOK6ERxsL2NkJipKxm7nc">
+</div>
+<button class="absolute bottom-0 right-0 w-10 h-10 rounded-full btn-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Sarah Jenkins</h3>
+<p class="font-label-sm text-label-sm text-primary mb-4 uppercase tracking-widest">Senior Technical Recruiter</p>
+<div class="w-full flex items-center justify-center gap-2 mt-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_10px_rgba(76,215,246,0.8)]"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Online &amp; Active</span>
+</div>
+</div>
+<!-- Account Status Card -->
+<div class="glass-panel rounded-xl p-6 relative">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">admin_panel_settings</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Account Status</h4>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-white/5">
+<span class="font-body-md text-body-md text-on-surface-variant">Role Level</span>
+<span class="font-mono-data text-mono-data text-tertiary bg-tertiary-container px-3 py-1 rounded-full border border-tertiary/20">ADMIN_L2</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-white/5">
+<span class="font-body-md text-body-md text-on-surface-variant">Member Since</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 2022</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">2FA Status</span>
+<div class="flex items-center gap-1 text-green-400">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm">Enabled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Forms & Settings -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Contact Details Form -->
+<div class="glass-panel rounded-xl p-6 md:p-8 relative">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent opacity-20"></div>
+<div class="flex items-center gap-3 mb-8">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">contact_mail</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Contact Details</h4>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">First Name</label>
+<input class="w-full glass-input rounded-lg px-4 py-3 font-body-md text-body-md" placeholder="Enter first name" type="text" value="Sarah">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Last Name</label>
+<input class="w-full glass-input rounded-lg px-4 py-3 font-body-md text-body-md" placeholder="Enter last name" type="text" value="Jenkins">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full glass-input rounded-lg pl-12 pr-4 py-3 font-body-md text-body-md" placeholder="name@company.com" type="email" value="s.jenkins@recruitrank.io">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">phone</span>
+<input class="w-full glass-input rounded-lg pl-12 pr-4 py-3 font-body-md text-body-md font-mono-data" placeholder="+1 (555) 000-0000" type="tel" value="+1 (555) 019-2834">
+</div>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="btn-primary font-label-sm text-label-sm px-6 py-3 rounded-lg shadow-lg" type="button">Save Changes</button>
+</div>
+</form>
+</div>
+<!-- Preferences & Security -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Preferences -->
+<div class="glass-panel rounded-xl p-6">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Preferences</h4>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Time Zone</label>
+<select class="w-full glass-input rounded-lg px-4 py-3 font-body-md text-body-md appearance-none">
+<option value="pst">(GMT-08:00) Pacific Time</option>
+<option selected="" value="est">(GMT-05:00) Eastern Time</option>
+<option value="utc">(GMT+00:00) UTC</option>
+</select>
+</div>
+<div class="space-y-2 pt-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Language</label>
+<select class="w-full glass-input rounded-lg px-4 py-3 font-body-md text-body-md appearance-none">
+<option selected="" value="en">English (US)</option>
+<option value="es">Spanish</option>
+<option value="fr">French</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Security -->
+<div class="glass-panel rounded-xl p-6 border-error/20">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-8 rounded-lg bg-error-container/20 flex items-center justify-center border border-error/10">
+<span class="material-symbols-outlined text-error text-[18px]">lock</span>
+</div>
+<h4 class="font-label-sm text-label-sm text-on-surface">Security</h4>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-body-md text-on-surface-variant">Update your password to keep your account secure. We recommend changing it every 90 days.</p>
+<div class="pt-4">
+<button class="w-full btn-secondary font-label-sm text-label-sm px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white/30 border-white/10 group transition-all">
+<span class="material-symbols-outlined text-[18px] group-hover:text-primary transition-colors">key</span>
+                                        Reset Password
+                                    </button>
+</div>
+<div class="pt-2 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-60 block">Last changed: 45 days ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom spacing -->
+<div class="h-24 md:h-12"></div>
+</div>
+</main>
+</body></html>

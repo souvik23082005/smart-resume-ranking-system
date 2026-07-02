@@ -1,0 +1,237 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Ranking Results - RecruitRank</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#e5e2e1",
+                        "primary-container": "#0b0e14",
+                        "on-secondary": "#3f008e",
+                        "surface-container-highest": "#353534",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-container": "#00879e",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed": "#001f26",
+                        "tertiary-fixed": "#acedff",
+                        "secondary-container": "#6001d1",
+                        "primary": "#c4c6cf",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#44474e",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#eaddff",
+                        "primary-fixed": "#e1e2eb",
+                        "outline": "#909095",
+                        "surface-tint": "#c4c6cf",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#c6c6cb",
+                        "primary-fixed-dim": "#c4c6cf",
+                        "surface-variant": "#353534",
+                        "on-secondary-container": "#c9aeff",
+                        "on-primary": "#2e3037",
+                        "tertiary": "#4cd7f6",
+                        "on-error": "#690005",
+                        "outline-variant": "#45474b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "on-secondary-fixed": "#25005a",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-fixed": "#191c22",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "inverse-primary": "#5c5e66",
+                        "on-primary-container": "#797b83",
+                        "secondary": "#d2bbff",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-bright": "#3a3939",
+                        "tertiary-container": "#001015",
+                        "on-tertiary": "#003640",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist"],
+                        "body-md": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "headline-lg": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Geist"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["15px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-data": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(11, 14, 20, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .glow-accent {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(124,58,237,0.4) 0%, rgba(6,182,212,0.1) 70%, transparent 100%);
+            filter: blur(40px);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #7C3AED 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .score-chip {
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            color: #d2bbff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container relative flex">
+<!-- Ambient Background Glows -->
+<div class="fixed top-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-[#7C3AED] opacity-10 blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-[#06B6D4] opacity-10 blur-[120px] pointer-events-none"></div>
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex flex-col h-full py-6 bg-surface-container/60 backdrop-blur-2xl docked h-screen left-0 w-64 border-r border-white/10 shadow-2xl z-40 fixed">
+<div class="px-margin-desktop mb-8">
+<span class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                RecruitRank
+            </span>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-1 uppercase tracking-wider">Recruitment Lead</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 px-2">
+<a class="text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface transition-all duration-300 ease-in-out flex items-center gap-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                User Management
+            </a>
+<!-- Active State based on context (Assessments/Ranking) -->
+<a class="bg-secondary-container/30 text-on-secondary-container border-l-4 border-secondary px-4 py-3 rounded-r-xl transition-all duration-300 ease-in-out flex items-center gap-3 font-body-md text-body-md font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                All Assessments
+            </a>
+<a class="text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface transition-all duration-300 ease-in-out flex items-center gap-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">add_box</span>
+                New Assessment
+            </a>
+<a class="text-on-surface-variant px-4 py-3 hover:bg-white/5 hover:text-on-surface transition-all duration-300 ease-in-out flex items-center gap-3 rounded-lg font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">cloud_upload</span>
+                My Uploads
+            </a>
+</div>
+<div class="mt-auto px-2 pt-4 border-t border-white/5 flex flex-col gap-2">
+<button class="w-full mb-4 bg-secondary-container hover:bg-secondary-container/80 text-on-secondary-container font-label-sm text-label-sm py-2 px-4 rounded-lg transition-colors border border-white/10">Upgrade Plan</button>
+<a class="text-on-surface-variant px-4 py-2 hover:bg-white/5 hover:text-on-surface transition-all duration-300 ease-in-out flex items-center gap-3 rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                Help
+            </a>
+<a class="text-on-surface-variant px-4 py-2 hover:bg-white/5 hover:text-on-surface transition-all duration-300 ease-in-out flex items-center gap-3 rounded-lg font-label-sm text-label-sm" href="#">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 relative min-h-screen pb-20">
+<!-- Header -->
+<header class="px-margin-desktop py-8 border-b border-white/5 bg-background/80 backdrop-blur-md sticky top-0 z-30">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Senior Frontend Engineer</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg mt-2">Ranking Results • 42 Candidates Processed</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 rounded-lg border border-white/10 hover:bg-white/5 text-on-surface font-label-sm text-label-sm transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span> Export Report
+                    </button>
+<button class="px-4 py-2 rounded-lg bg-[#7C3AED] hover:bg-[#6001d1] text-white border-t border-[#3B82F6] font-label-sm text-label-sm transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(124,58,237,0.3)]">
+<span class="material-symbols-outlined text-[18px]">mail</span> Contact Top 3
+                    </button>
+</div>
+</div>
+</header>
+<div class="px-margin-desktop py-8 max-w-[1440px] mx-auto space-y-12">
+<!-- 1. Top Leaderboard (Podium) -->
+<section>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Top Matches</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+<!-- Rank 2 (Silver) -->
+<div class="glass-panel rounded-xl p-6 relative flex flex-col items-center text-center order-2 md:order-1 border-t-2 border-[#C0C0C0] opacity-90 hover:opacity-100 transition-opacity">
+<div class="absolute -top-4 bg-[#C0C0C0] text-black font-label-sm text-label-sm px-3 py-1 rounded-full font-bold shadow-lg shadow-[#C0C0C0]/20">2ND PLACE</div>
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-white/10 mb-4 mt-2">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male software engineer in a modern office with glass walls, wearing a smart casual dark blue shirt, subtle soft rim lighting emphasizing high-tech corporate environment, 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYjxilui2Th3g1o85XxSvK6aRUg-q1CPQOEXYz2Vm89XeQBfGii29nMlK-IoHwpxqh7MG9n7O7PV6VEUIVbKN3FjIRPigV8mnWehOGuRbpLSfe8mcyG--JX75lYgAxxIHopOfIoG38cq2KhvpkziNHQ1LNR3yOViA6pyu9NKWxQw6c-yCnxfV8IrwvNl7ibrgD_kqSMpHyv4xLbpOmxehDNweUkRdt-5bF20z_8lU0G-1EB-Lt30MA8L4aTnyXllfAbIa5cKsQGVA">
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Marcus Thorne</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Staff Engineer @ TechFlow</p>
+<div class="text-4xl font-mono-data text-mono-data font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 mb-2">94%</div>
+<p class="text-label-sm font-label-sm text-on-primary-container">Overall Match</p>
+</div>
+<!-- Rank 1 (Gold) -->
+<div class="glass-panel rounded-xl p-8 relative flex flex-col items-center text-center order-1 md:order-2 border-t-4 border-[#FFD700] shadow-[0_0_30px_rgba(255,215,0,0.15)] transform md:-translate-y-4 z-10">
+<div class="absolute -top-5 bg-gradient-to-r from-[#FFD700] to-[#FDB931] text-black font-label-sm text-label-sm px-4 py-1.5 rounded-full font-bold shadow-lg shadow-[#FFD700]/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">star</span> 1ST PLACE
+                        </div>
+<div class="w-28 h-28 rounded-full overflow-hidden border-4 border-[#FFD700]/30 mb-4 mt-2 p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a female lead developer with short hair in a bright tech studio, warm cinematic lighting, wearing a minimalist black turtleneck, dark background with subtle purple accent lights, hyper-detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM5jjgkFTfWDKnUMugtFinBx5ROrGEIlmZNhI-ejW1LniBZRuV_qFi5vSsblTNDJhj2PTgDox1HIQoVhUxqZNgDsh9Dc-WNKlyeBlyD8TGPhOu2I9eMuQ5_2TRANyCjV9k3rs_ieExqZGW7saNkFs6KT5qZN1K9Sm1yIk8d4Ilds2uOfwNwjk5AmYG3_Zx1j-nhweajkiA0J0ziPY88PL1t5I3Q34y9XYsyjd5w2yzkQ_h6VxU8inbZoKkVOZI45GaJDrJEqdXxDo">
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-2xl">Elena Rostova</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Lead UI Developer @ Nexus</p>
+<div class="text-5xl font-mono-data text-mono-data font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FFA500] mb-2 drop-shadow-sm">98%</div>
+<p class="text-label-sm font-label-sm text-on-primary-container uppercase tracking-widest">Highest Overall Match</p>
+</div>
+<!-- Rank 3 (Bronze) -->
+<div class="glass-panel rounded-xl p-6 relative flex flex-col items-center text-center order-3 md:order-3 border-t-2 border-[#CD7F32] opacity-80 hover:opacity-100 transition-opacity">
+<div class="absolute -top-4 bg-[#CD7F32] text-black font-label-sm text-label-sm px-3 py-1 rounded-full font-bold shadow-lg shadow-[#CD7F32]/20">3RD PLACE</div>
+<div class="w-20 h-20 rounded-full overflow-hidden border-2 border-white/10 mb-4 mt-2">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male senior engineer with glasses in a dimly lit server room or dark office, blue screen glow reflecting on glasses, wearing a grey crew neck sweater, sharp focus, corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR2RfDz5JS7E0g96kKVx7OtsG4R5ArkR23X9lFklE4X4NTkqwP4JAfkjoRgeSvzLz6xvqfLq-ZRByvW26mbS34g9Deg6VDZhl4ZwfCIsLe-09sNPxnX3JJpvvuBC-YY07oRZh8JvlB1IOjDjOg9sNbJkI-hD02XmJb145ebD6Hn53iN1b-MWVW46YnPH4dHuylnDqyWMart6aVLV8d5i3RBzet9px7ICrOYVE7sITjmBEBGJ8XoVbxiISFhDwVTwc096Mlyc-XeEY">
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">David Chen</h3>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Sr. Frontend @ CloudSync</p>
+<div class="text-4xl font-mono-data text-mono-data font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#CD7F32] to-[#A0522D] mb-2">91%</div>
+<p class="text-label-sm font-label-sm text-on-primary-container">Overall Match</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>
