@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: recruitrank-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && gunicorn app:app"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      # The following must be set manually in the Render Dashboard:
+      # - DB_HOST
+      # - DB_USER
+      # - DB_PASSWORD
+      # - DB_NAME

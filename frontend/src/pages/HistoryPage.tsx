@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../context/AppContext';
+import { API_BASE } from '../lib/api';
 
 interface HistoryRecord {
   id: string;
@@ -23,7 +24,7 @@ export default function HistoryPage() {
   useEffect(() => {
     async function fetchHistory() {
       try {
-        const res = await fetch('http://localhost:5000/api/history');
+        const res = await fetch(`${API_BASE}/history`);
         if (!res.ok) throw new Error('Failed to fetch history');
         const data = await res.json();
         setHistory(data);

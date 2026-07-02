@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Zap, ArrowRight, Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
+import { API_BASE } from '../lib/api';
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -9,10 +10,10 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false);
 
   async function handleSignup(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const response = await fetch('http://localhost:5000/api/auth/signup', {
+      e.preventDefault();
+      setLoading(true);
+      try {
+        const response = await fetch(`${API_BASE}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

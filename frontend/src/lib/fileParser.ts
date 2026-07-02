@@ -1,6 +1,7 @@
 import * as pdfjsLib from 'pdfjs-dist';
 import mammoth from 'mammoth';
 import { ParsedResumeFields } from '../types';
+import { API_BASE } from './api';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -214,7 +215,7 @@ function extractLocation(text: string): string {
 }
 
 export async function parseResumeText(text: string): Promise<ParsedResumeFields> {
-  const res = await fetch('http://localhost:5000/api/extract/resume', {
+  const res = await fetch(`${API_BASE}/extract/resume`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text }),
@@ -242,7 +243,7 @@ export async function parseJDText(text: string): Promise<Partial<{
   industry: string;
   notice_period_days: number;
 }>> {
-  const res = await fetch('http://localhost:5000/api/extract/jd', {
+  const res = await fetch(`${API_BASE}/extract/jd`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text }),
