@@ -27,6 +27,13 @@ db_config = {
     "database": os.getenv("MYSQL_DATABASE", "resume_ranking"),
 }
 
+# Add SSL config if connecting to a cloud database that requires it (like TiDB)
+if os.getenv("MYSQL_HOST") and "tidbcloud" in os.getenv("MYSQL_HOST"):
+    db_config["ssl_verify_cert"] = True
+    db_config["ssl_verify_identity"] = True
+    if os.getenv("MYSQL_SSL_CA"):
+        db_config["ssl_ca"] = os.getenv("MYSQL_SSL_CA")
+
 pool = pooling.MySQLConnectionPool(
     pool_name="recruitrank_pool",
     pool_size=5,
