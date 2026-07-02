@@ -6,6 +6,7 @@ import JDPage from './pages/JDPage';
 import ResumesPage from './pages/ResumesPage';
 import RankingConfigPage from './pages/RankingConfigPage';
 import ResultsPage from './pages/ResultsPage';
+import CustomCursor from './components/CustomCursor';
 
 function Dashboard() {
   const { step } = useApp();
@@ -36,8 +37,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <CustomCursor />
         <AnimatedRoutes />
       </AppProvider>
     </BrowserRouter>
   );
 }
+
